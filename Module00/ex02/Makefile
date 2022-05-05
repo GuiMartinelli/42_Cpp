@@ -6,13 +6,13 @@
 #    By: guferrei <guferrei@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/05 14:26:35 by guferrei          #+#    #+#              #
-#    Updated: 2022/05/05 14:29:04 by guferrei         ###   ########.fr        #
+#    Updated: 2022/05/05 17:58:28 by guferrei         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME=account
 
-CC=g++
+CC=c++
 
 CCFLAGS= -Wall -Wextra -Werror -std=c++98
 
