@@ -6,7 +6,7 @@
 /*   By: guferrei <guferrei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 15:12:06 by guferrei          #+#    #+#             */
-/*   Updated: 2022/05/10 19:02:17 by guferrei         ###   ########.fr       */
+/*   Updated: 2022/05/16 20:49:03 by guferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,23 @@ static bool	checkInputFile(char *file) {
 	return true;
 }
 
+static std::string	outputNewString(std::string s1, std::string s2, std::string buffer) {
+	int			index;
+	std::string	newString;
+
+	index = buffer.find(s1);
+	if (index < 0)
+		return (buffer);
+	while (index >= 0) {
+		newString.append(buffer.substr(0, index));
+		newString.append(s2);
+		buffer.erase(0, (index + s1.length()));
+		index = buffer.find(s1);
+	}
+	newString.append(buffer);
+	return (newString);
+}
+
 static void	replace(char *file, const char *newFile, char *s1, char *s2) {
 	std::ifstream	ifs(file);
 	std::ofstream	ofs(newFile);
@@ -29,9 +46,8 @@ static void	replace(char *file, const char *newFile, char *s1, char *s2) {
 
 	while (ifs.peek() != EOF) {
 		ifs >> buffer;
-		if (!buffer.compare(s1))
-			ofs << s2;
-		else
+		buffer = outputNewString(s1, s2, buffer);
+		if (!buffer.empty())
 			ofs << buffer;
 		if (ifs.peek() == '\n')
 			ofs << std::endl;

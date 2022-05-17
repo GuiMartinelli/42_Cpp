@@ -6,7 +6,7 @@
 /*   By: guferrei <guferrei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 14:57:22 by guferrei          #+#    #+#             */
-/*   Updated: 2022/05/10 17:29:43 by guferrei         ###   ########.fr       */
+/*   Updated: 2022/05/11 16:53:09 by guferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,19 +51,10 @@ void	Harl::complain(std::string level) {
 	{
 		case 0:
 			this->debug();
-			this->info();
-			this->warning();
-			this->error();
-			break ;
 		case 1:
 			this->info();
-			this->warning();
-			this->error();
-			break ;
 		case 2:
 			this->warning();
-			this->error();
-			break ;
 		case 3:
 			this->error();
 			break ;

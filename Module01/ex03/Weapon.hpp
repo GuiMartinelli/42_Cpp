@@ -6,7 +6,7 @@
 /*   By: guferrei <guferrei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 13:58:53 by guferrei          #+#    #+#             */
-/*   Updated: 2022/05/09 14:51:10 by guferrei         ###   ########.fr       */
+/*   Updated: 2022/05/11 16:08:39 by guferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ public:
 	Weapon(std::string type);
 	~Weapon();
 
-	const std::string	getType();
+	const std::string&	getType();
 	void				setType(std::string weapon);
 };
 

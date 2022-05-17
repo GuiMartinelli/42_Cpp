@@ -6,7 +6,7 @@
 /*   By: guferrei <guferrei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 14:04:04 by guferrei          #+#    #+#             */
-/*   Updated: 2022/05/09 14:51:00 by guferrei         ###   ########.fr       */
+/*   Updated: 2022/05/11 16:08:30 by guferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ Weapon::~Weapon(void) {
 	
 }
 
-const std::string	Weapon::getType(void) {
+const std::string&	Weapon::getType(void) {
 	return (this->_type);
 }
 
