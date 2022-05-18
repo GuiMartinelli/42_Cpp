@@ -6,7 +6,7 @@
 /*   By: guferrei <guferrei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 10:04:32 by guferrei          #+#    #+#             */
-/*   Updated: 2022/05/18 19:59:31 by guferrei         ###   ########.fr       */
+/*   Updated: 2022/05/18 20:22:30 by guferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,9 +82,8 @@ Fixed	Fixed::operator*( Fixed const & obj ) const {
 }
 
 Fixed	Fixed::operator/( Fixed const & obj ) const {
-	Fixed	div;
+	Fixed	div(this->toFloat() / obj.toFloat());
 
-	div.setRawBits((this->getRawBits() / obj.getRawBits()) << div._bits);
 	return div;
 }
 
