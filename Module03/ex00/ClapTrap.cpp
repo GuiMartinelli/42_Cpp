@@ -6,14 +6,23 @@
 /*   By: guferrei <guferrei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 18:25:00 by guferrei          #+#    #+#             */
-/*   Updated: 2022/05/19 20:16:08 by guferrei         ###   ########.fr       */
+/*   Updated: 2022/05/20 21:35:38 by guferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap(std::string name) {
+ClapTrap::ClapTrap(void) {
 	std::cout << "Default constructor called" << std::endl;
+
+	this->_name = "DefaultClapTrap";
+	this->_healthPts = 10;
+	this->_energyPts = 10;
+	this->_attackDmg = 0;
+}
+
+ClapTrap::ClapTrap(std::string name) {
+	std::cout << "Param constructor called" << std::endl;
 
 	this->_name = name;
 	this->_healthPts = 10;
@@ -76,13 +85,16 @@ void	ClapTrap::setAttack(int att) {
 }
 
 void	ClapTrap::attack(const std::string & target) {
-	if (this->_energyPts > 0) {
+	if (this->_energyPts <= 0)
+		std::cout << this->_name <<" don't have enough energy points to attack" << std::endl;
+	else if (this->_healthPts <= 0)
+		std::cout << this->_name <<" is dead and can't attack" << std::endl;
+	else {
 		std::cout << "ClapTrap " << this->_name << " attacks " \
 		<< target << " causing " << this->_attackDmg \
 		<< " points of damage!" << std::endl;
 		this->_energyPts--;
-	} else
-		std::cout << this->_name <<" don't have enough energy points to attack" << std::endl;
+	}
 }
 
 void	ClapTrap::takeDamage(unsigned int amount) {
@@ -93,11 +105,14 @@ void	ClapTrap::takeDamage(unsigned int amount) {
 }
 
 void	ClapTrap::beRepaired(unsigned int amount) {
-		if (this->_energyPts > 0) {
+	if (this->_energyPts <= 0)
+		std::cout << this->_name <<" don't have enough energy points to repair itself" << std::endl;
+	else if (this->_healthPts <= 0)
+		std::cout << this->_name <<" is dead and can't repair itself" << std::endl;
+	else {
 		std::cout << "ClapTrap " << this->_name << " auto repair in " \
 		<< amount << " health points" << std::endl;
 		this->_energyPts--;
 		this->_healthPts += amount;
-	} else
-		std::cout << this->_name <<" don't have enough energy points to auto repair" << std::endl;
+	}
 }

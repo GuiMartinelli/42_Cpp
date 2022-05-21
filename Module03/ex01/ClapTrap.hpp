@@ -6,7 +6,7 @@
 /*   By: guferrei <guferrei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 18:18:49 by guferrei          #+#    #+#             */
-/*   Updated: 2022/05/19 20:05:39 by guferrei         ###   ########.fr       */
+/*   Updated: 2022/05/20 20:12:28 by guferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ private:
 	int			_attackDmg;
 
 public:
+	ClapTrap();
 	ClapTrap(std::string name);
 	ClapTrap(ClapTrap const & obj);
 	~ClapTrap();

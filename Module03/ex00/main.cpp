@@ -6,7 +6,7 @@
 /*   By: guferrei <guferrei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 19:06:44 by guferrei          #+#    #+#             */
-/*   Updated: 2022/05/19 21:50:24 by guferrei         ###   ########.fr       */
+/*   Updated: 2022/05/20 21:36:33 by guferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	main(void) {
 	//Declaring and constructing the p2 object copying from p1
 	ClapTrap	p2( p1 );
 	p2.attack("a monster");
-	p2.takeDamage(8);
+	p2.takeDamage(15);
 	p2.beRepaired(2);
 
 	std::cout << std::endl << "Testing with assignment operator and getting without energy points" << std::endl;
@@ -35,10 +35,6 @@ int	main(void) {
 	ClapTrap	p3("Oliver");
 	p3 = p2;
 
-	//For loop to spend all energy points
-	for (int i = 0; i < 6 ; i++) {
-		p3.attack("a tree");
-	}
 	p3.attack("a tree");
 	p3.beRepaired(1);
 
