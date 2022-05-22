@@ -6,7 +6,7 @@
 /*   By: guferrei <guferrei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/21 13:20:47 by guferrei          #+#    #+#             */
-/*   Updated: 2022/05/21 16:10:35 by guferrei         ###   ########.fr       */
+/*   Updated: 2022/05/22 17:50:32 by guferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,8 @@ void	Dog::setIdea(std::string idea){
 
 	while (!this->brain->ideas[index].empty()){
 		index++;
+		if (index == 100)
+			break ;
 	}
 	if (index < 100)
 		this->brain->ideas[index] = idea;

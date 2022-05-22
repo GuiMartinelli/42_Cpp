@@ -6,7 +6,7 @@
 /*   By: guferrei <guferrei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/21 21:26:40 by guferrei          #+#    #+#             */
-/*   Updated: 2022/05/22 17:34:06 by guferrei         ###   ########.fr       */
+/*   Updated: 2022/05/22 17:52:28 by guferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,10 +54,9 @@ std::string const & Character::getName() const {
 void Character::equip(AMateria* m) {
 	int	idx = 0;
 
-	while (idx < 4) {
-		if (this->inventory[idx])
-			idx++;
-		else
+	while (this->inventory[idx]) {
+		idx++;
+		if (idx > 3)
 			break;
 	}
 	if (idx > 3)

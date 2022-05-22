@@ -6,7 +6,7 @@
 /*   By: guferrei <guferrei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/21 13:27:28 by guferrei          #+#    #+#             */
-/*   Updated: 2022/05/21 16:09:54 by guferrei         ###   ########.fr       */
+/*   Updated: 2022/05/22 17:49:02 by guferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,8 @@ void	Cat::setIdea(std::string idea){
 
 	while (!this->brain->ideas[index].empty()){
 		index++;
+		if (index == 100)
+			break ;
 	}
 	if (index < 100)
 		this->brain->ideas[index] = idea;
