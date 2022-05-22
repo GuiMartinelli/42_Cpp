@@ -6,7 +6,7 @@
 /*   By: guferrei <guferrei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 19:12:55 by guferrei          #+#    #+#             */
-/*   Updated: 2022/05/20 21:54:47 by guferrei         ###   ########.fr       */
+/*   Updated: 2022/05/22 16:26:51 by guferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ DiamondTrap::~DiamondTrap() {
 DiamondTrap &	DiamondTrap::operator=(DiamondTrap const & obj) {
 	if (this != &obj) {
 		this->_name = obj._name;
+		ClapTrap::setName(obj._name + "_clap_trap");
 		this->setHealth(obj.getHealth());
 		this->setEnergy(obj.getEnergy());
 		this->setAttack(obj.getAttack());
