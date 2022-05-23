@@ -6,7 +6,7 @@
 /*   By: guferrei <guferrei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/21 20:24:39 by guferrei          #+#    #+#             */
-/*   Updated: 2022/05/22 14:34:50 by guferrei         ###   ########.fr       */
+/*   Updated: 2022/05/23 19:14:15 by guferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class Ice : public AMateria
 public:
 	Ice();
 	Ice(Ice const & obj);
-	~Ice();
+	virtual ~Ice();
 
 	Ice &	operator=(Ice const & obj);
 

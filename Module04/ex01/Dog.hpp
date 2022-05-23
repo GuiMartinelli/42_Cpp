@@ -6,7 +6,7 @@
 /*   By: guferrei <guferrei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/21 13:14:11 by guferrei          #+#    #+#             */
-/*   Updated: 2022/05/21 15:12:02 by guferrei         ###   ########.fr       */
+/*   Updated: 2022/05/23 18:57:08 by guferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ private:
 public:
 	Dog();
 	Dog(Dog const & obj);
-	~Dog();
+	virtual ~Dog();
 
 	Dog &	operator=(Dog const & obj);
 

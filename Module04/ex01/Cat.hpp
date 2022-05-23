@@ -6,7 +6,7 @@
 /*   By: guferrei <guferrei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/21 13:25:35 by guferrei          #+#    #+#             */
-/*   Updated: 2022/05/21 16:13:34 by guferrei         ###   ########.fr       */
+/*   Updated: 2022/05/23 18:57:05 by guferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ private:
 public:
 	Cat();
 	Cat(Cat const & obj);
-	~Cat();
+	virtual ~Cat();
 
 	Cat &	operator=(Cat const & obj);
 

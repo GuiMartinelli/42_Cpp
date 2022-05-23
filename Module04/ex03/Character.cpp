@@ -6,7 +6,7 @@
 /*   By: guferrei <guferrei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/21 21:26:40 by guferrei          #+#    #+#             */
-/*   Updated: 2022/05/22 17:52:28 by guferrei         ###   ########.fr       */
+/*   Updated: 2022/05/23 19:12:44 by guferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,18 +31,21 @@ Character::Character(Character const & obj) : ICharacter() {
 }
 
 Character::~Character() {
-	for (int i = 0; i < 4; i++)
+	for (int i = 0; i < 4; i++) {
 		delete this->inventory[i];
+		this->inventory[i] = NULL;
+	}
 }
 
 Character &	Character::operator=(Character const & obj) {
 	if (this != &obj) {
 		this->name = obj.name;
-		for (int i = 0; i < 4; i++)
-			if (obj.inventory[i] != NULL)
+		for (int i = 0; i < 4; i++) {
+			delete this->inventory[i];
+			this->inventory[i] = NULL;
+			if (obj.inventory[i])
 				this->inventory[i] = obj.inventory[i]->clone();
-			else
-				this->inventory[i] = NULL;
+		}
 	}
 	return *this;
 }
