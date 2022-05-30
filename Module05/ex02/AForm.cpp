@@ -6,7 +6,7 @@
 /*   By: guferrei <guferrei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 21:29:52 by guferrei          #+#    #+#             */
-/*   Updated: 2022/05/25 20:15:16 by guferrei         ###   ########.fr       */
+/*   Updated: 2022/05/30 19:02:25 by guferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,10 +77,3 @@ std::ostream &	operator<<(std::ostream & o, AForm & f) {
 
 	return o;
 }
-
-// void	AForm::beSigned(Bureaucrat const & bur) {
-// 	if (bur.getGrade() > this->_gradeSign)
-// 		throw GradeTooLowException();
-// 	else
-// 		this->_isSigned = true;
-// }
