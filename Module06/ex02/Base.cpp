@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Base.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: guferrei <guferrei@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: coder <coder@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 19:25:02 by guferrei          #+#    #+#             */
-/*   Updated: 2022/06/01 20:28:20 by guferrei         ###   ########.fr       */
+/*   Updated: 2022/06/06 21:57:18 by coder            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,14 +41,16 @@ void	identify(Base* p) {
 
 void	identify(Base& p) {
 	try {
-		dynamic_cast<A&>(p);
+		A&	a = dynamic_cast<A&>(p);
 		std::cout << "A" << std::endl;
+		(void)a;
 		return ;
 	} catch(std::exception& e) {}
 
 	try {
-		dynamic_cast<B&>(p);
+		B&	b = dynamic_cast<B&>(p);
 		std::cout << "B" << std::endl;
+		(void)b;
 		return ;
 	} catch(std::exception& e) {}
 
