@@ -6,7 +6,7 @@
 /*   By: guferrei <guferrei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 16:52:44 by guferrei          #+#    #+#             */
-/*   Updated: 2022/06/01 16:52:59 by guferrei         ###   ########.fr       */
+/*   Updated: 2022/06/06 17:10:15 by guferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ static bool	isValidNum(std::string str) {
 	for (int i = 0; i < (int)str.length(); i++) {
 		if (str[i] == '.' && dot == 0)
 			dot++;
-		else if (!isdigit(str[i]) && (i != 0 && str[i] != '-')
-					&& (i != (int)str.length() && str[i] != 'f'))
+		else if (!isdigit(str[i]) && !(i == 0 && str[i] == '-')
+					&& !(i == (int)str.length() && str[i] == 'f'))
 			return false;
 	}
 	return true;
@@ -34,7 +34,7 @@ void	toChar(std::string str) {
 
 	if (str.length() > 1 && !isdigit(str[0]))
 		std::cout << "impossible" << std::endl;
-	else if (isalpha(str[0]))
+	else if (isprint(str[0]) && !isdigit(str[0]))
 		std::cout << str << std::endl;
 	else {
 		if (std::atoll(str.c_str()) > 126 || !isValidNum(str)) {
@@ -53,7 +53,10 @@ void	toInt(std::string str) {
 	int	n;
 
 	if (!isValidNum(str)) {
-		std::cout << "impossible" << std::endl;
+		if (str.length() == 1)
+			std::cout << static_cast<int>(str[0]) << std::endl;
+		else
+			std::cout << "impossible" << std::endl;
 		return ;
 	}
 	n = std::atol(str.c_str());
@@ -67,7 +70,10 @@ void	toFloat(std::string str) {
 	double	f;
 
 	if (!isValidNum(str)) {
-		std::cout << "nanf" << std::endl;
+		if (str.length() == 1)
+			std::cout << static_cast<int>(str[0]) << ".0f" << std::endl;
+		else
+			std::cout << "nanf" << std::endl;
 		return ;
 	}
 	f = atof(str.c_str());
@@ -87,7 +93,10 @@ void	toDouble(std::string str) {
 	double	f;
 
 	if (!isValidNum(str)) {
-		std::cout << "nan" << std::endl;
+		if (str.length() == 1)
+			std::cout << static_cast<int>(str[0]) << ".0" << std::endl;
+		else
+			std::cout << "nan" << std::endl;
 		return ;
 	}
 	f = atof(str.c_str());
