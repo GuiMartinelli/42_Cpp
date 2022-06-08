@@ -6,7 +6,7 @@
 /*   By: guferrei <guferrei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 16:52:44 by guferrei          #+#    #+#             */
-/*   Updated: 2022/06/06 17:10:15 by guferrei         ###   ########.fr       */
+/*   Updated: 2022/06/07 21:03:00 by guferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static bool	isValidNum(std::string str) {
 		if (str[i] == '.' && dot == 0)
 			dot++;
 		else if (!isdigit(str[i]) && !(i == 0 && str[i] == '-')
-					&& !(i == (int)str.length() && str[i] == 'f'))
+					&& !(i == ((int)str.length() - 1) && str[i] == 'f'))
 			return false;
 	}
 	return true;
@@ -35,7 +35,7 @@ void	toChar(std::string str) {
 	if (str.length() > 1 && !isdigit(str[0]))
 		std::cout << "impossible" << std::endl;
 	else if (isprint(str[0]) && !isdigit(str[0]))
-		std::cout << str << std::endl;
+		std::cout << '\'' << str << '\'' << std::endl;
 	else {
 		if (std::atoll(str.c_str()) > 126 || !isValidNum(str)) {
 			std::cout << "impossible" << std::endl;
